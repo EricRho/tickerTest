@@ -7,5 +7,10 @@ app.factory('Stock', ['$resource', function($resource) {
 	Stock.prototype.all = function() {
 		return this.service.query();
 	};
+	Stock.prototype.delete = function(stockId) {
+		this.service.remove({
+			stockId: stockId
+		});
+	};
 	return new Stock;
 }]);

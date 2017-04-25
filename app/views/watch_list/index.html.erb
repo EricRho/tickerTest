@@ -4,6 +4,7 @@
 	<ul>
 		<li ng-repeat='stock in stocks'>
 			{{ stock.id }}<strong>{{ stock.sybmol }}</strong> {{ stock.name }}
+			<a href="" ng-click='deleteStock(stock.id, $index)'>DELETE</a>
 		</li>
 	</ul>
 </div>
