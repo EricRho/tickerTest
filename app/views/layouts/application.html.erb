@@ -8,15 +8,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-  	<div>
-  		<% if user_signed_in? %>
-			<%= link_to('Edit Account', edit_user_registration_path) %>
-  		<% else %>
-  			<%= link_to('Login', new_user_session_path) %>
-  			<%= link_to('Register', new_user_registration_path) %>
-  		<% end %>
-  	</div>
+  <body ng-app='tickerTest'>
+  <!-- <div class='all'>
+    <nav class='navbar navbar-default' role='navigation'>
+      <nav class='container-fluid'>
+        <div class='navbar-header'>
+          <a class='navbar-brand' href="/">TickerTracker</a>
+        </div>
+      </nav>
+    </nav>
+  </div> -->
+    <md-toolbar class='md-hue-2' style='background-color: tomato;'>
+      <div class='md-toolbar-tools'>
+        <h2>TickerTracker</h2>
+        <span flex></span>
+        <md-button>Test</md-button>
+      </div>
+    </md-toolbar>
     <%= yield %>
   </body>
 </html>

@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'angularjs-rails'
+gem 'rails-angular-material'
+
 gem 'httparty'
 
 gem 'devise'

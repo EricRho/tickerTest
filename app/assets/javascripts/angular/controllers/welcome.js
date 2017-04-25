@@ -1,3 +1,4 @@
-app.controller('welcomeController', ['$scope', function($scope) {
-	alert('test');
+app.controller('welcomeCtrl', ['$scope', function($scope) {
+
+	$scope.message = 'Welcome Page';
 }]);
