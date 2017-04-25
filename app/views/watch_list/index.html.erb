@@ -1,9 +1,16 @@
 <div ng-controller='stocksCtrl'>
+	<form ng-submit='createStock()'>
+		<input type="text" ng-model='newCompany'>
+		<input type="submit" value='Follow'>
+
+		{{ newCompany }}
+	</form>
+
 	My Stocks
 	{{ message }}
 	<ul>
 		<li ng-repeat='stock in stocks'>
-			{{ stock.id }}<strong>{{ stock.sybmol }}</strong> {{ stock.name }}
+			{{ stock.id }}<strong>{{ stock.symbol }}</strong> {{ stock.name }}
 			<a href="" ng-click='deleteStock(stock.id, $index)'>DELETE</a>
 		</li>
 	</ul>

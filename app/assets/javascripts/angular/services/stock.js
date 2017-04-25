@@ -12,5 +12,8 @@ app.factory('Stock', ['$resource', function($resource) {
 			stockId: stockId
 		});
 	};
+	Stock.prototype.create = function(attrs) {
+		return this.service.save(attrs);
+	};
 	return new Stock;
 }]);

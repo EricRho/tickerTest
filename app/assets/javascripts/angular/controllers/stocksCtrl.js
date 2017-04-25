@@ -1,19 +1,19 @@
-// app.controller('stocksCtrl', ['$scope', function($scope) {
+app.controller('stocksCtrl', ['$scope', '$filter', 'Stock', function($scope, $filter, Stock) {
 
-// 	$scope.message = 'Stocks Controller';
-
-// 	$scope.stocks = Stock.query();
-// }]);
-
-app.controller('stocksCtrl', ['$scope', 'Stock', function($scope, Stock) {
 	$scope.message = 'Stocks Controller Working';
-
-	// var Stocks = $resource('/api/stocks');
 
 	$scope.stocks = Stock.all();
 
 	$scope.deleteStock = function(id, index) {
 		$scope.stocks.splice(index, 1);
 		return Stock.delete(id);
+	};
+
+	$scope.createStock = function() {
+		var attr = {};
+		attr.symbol = $filter('uppercase')($scope.newCompany);
+		var newStock = Stock.create(attr);
+		$scope.stocks.push(newStock);
+		$scope.newCompany = '';
 	};
 }]);
