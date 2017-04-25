@@ -17,7 +17,7 @@
 //= require angular-resource
 //= require angular-aria
 //= require angular-material.min
-//= require turbolinks
+
 //= require main.js
 //= require_tree ./angular
 //= require_tree .

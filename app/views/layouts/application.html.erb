@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One|Quicksand|Rokkitt|Exo|Dancing+Script|Raleway' rel='stylesheet' type='text/css'>
   </head>
 
   <body ng-app='tickerTest'>
@@ -20,9 +22,18 @@
   </div> -->
     <md-toolbar class='md-hue-2' style='background-color: tomato;'>
       <div class='md-toolbar-tools'>
-        <h2>TickerTracker</h2>
+        <a href="/">
+          <h2>TickerTracker</h2>
+        </a>
         <span flex></span>
-        <md-button>Test</md-button>
+        <!-- <md-button>Test</md-button> -->
+        <% if user_signed_in? %>
+          <md-button><%= link_to('Edit Account', edit_user_registration_path) %></md-button>
+          <md-button><%= link_to('logout', destroy_user_session_path, :method => :delete) %></md-button>
+        <% else %>
+          <md-button><%= link_to('login', new_user_session_path) %></md-button>
+          <md-button><%= link_to('Sign up', new_user_registration_path) %></md-button>
+        <% end %>
       </div>
     </md-toolbar>
     <%= yield %>
