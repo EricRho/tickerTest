@@ -1,0 +1,9 @@
+<div ng-controller='stocksCtrl'>
+	My Stocks
+	{{ message }}
+	<ul>
+		<li ng-repeat='stock in stocks'>
+			{{ stock.id }}<strong>{{ stock.sybmol }}</strong> {{ stock.name }}
+		</li>
+	</ul>
+</div>
