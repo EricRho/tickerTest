@@ -6,8 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Stock.create!(symbol: 'MNKD', name: 'Mannkind Corp')
-Stock.create!(symbol: 'NVDA', name: 'Nvidia')
-Stock.create!(symbol: 'AMZN', name: 'Amazon')
-Stock.create!(symbol: 'AMD', name: 'AMD')
-Stock.create!(symbol: 'INTC', name: 'Intel')
+Derivative.delete_all
+
+require 'csv'
+
+csv_text = File.read('companylist.csv')
+csv = CSV.parse(csv_text, :headers => true)
+csv.each do |row|
+  Derivative.create!(row.to_hash)
+end

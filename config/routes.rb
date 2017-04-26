@@ -14,4 +14,5 @@ Rails.application.routes.draw do
       format: :json
     }
   end
+  get :derivatives, to: 'derivatives#index'
 end
