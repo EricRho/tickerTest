@@ -1,1 +1,1 @@
-var app = angular.module('tickerTest',['ngMaterial', 'ngAnimate', 'ngResource']);
+var app = angular.module('tickerTest',['ngMaterial', 'ui.select2', 'ngAnimate', 'ngResource']);

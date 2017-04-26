@@ -37,10 +37,13 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'angularjs-rails'
 gem 'rails-angular-material'
+gem 'angular-ui-select2-rails'
+gem 'select2-rails'
 
 gem 'httparty'
 
 gem 'devise'
+
 
 
 group :development, :test do
