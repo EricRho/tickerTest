@@ -21,12 +21,20 @@ app.controller('stocksCtrl', ['$scope', '$filter', '$http', 'Stock', function($s
 	};
 
 	$scope.select2Options = {
+		initSelection: function(el, fn) {},
 		'ajax': {
-			type: 'GET',
-			url: 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%3D%22AAPL%22&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=quote',
-			dataType: 'jsonp',
-			jsonp: 'callback',
-			jsonCallback: 'quote'
+			url: '/api/derivatives.json',
+			dataType: 'json',
+			data: function(term, page) {
+				return {
+					q: term
+				}
+			},
+			results: function(data, page) {
+				return {
+					results: data
+				};
+			}
 		}
 	};
 

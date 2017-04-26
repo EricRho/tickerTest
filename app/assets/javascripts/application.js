@@ -16,9 +16,9 @@
 //= require angular-animate
 //= require angular-aria
 //= require angular-material.min
-//= require select2
-//= require angular-resource
+//= require select2-full
 //= require angular-ui-select2
+//= require angular-resource
 //= require main.js
 //= require_tree ./angular
 //= require_tree .
