@@ -1,17 +1,21 @@
 <div ng-controller='stocksCtrl'>
 	<form ng-submit='createStock()'>
 
-		<select ui-select2='select2Options' ng-model='newCompany', data-placeholder='Search NASDAQ', ng-required='true' style='width: 200px;'>
-			<option value=''></option>
-			<option ng-repeat='company in companyList'></option>
+		<select ui-select2='companyList' ng-model='newCompany', data-placeholder='Search NASDAQ', ng-required='true' style='width: 200px;'>
+			<!-- <option value=''></option> -->
+			<option ng-repeat='company in companyList' ng-model='company.name'></option>
 		</select>
 		{{ newCompany }}
+
+		<ui-select ng-model='newCompany'>
+
+		</ui-select>
 	</form>
 
 	<div style='border: 1px solid tomato;'>
 		<select ng-model='newCompany' style='width: 200px;'>
 			<option value=""></option>
-			<option ng-repeat='company in companyList'></option>
+			<option ng-repeat='company in companyList' ng-model='company.name'>{{ company.name }}</option>
 		</select>
 	</div>
 

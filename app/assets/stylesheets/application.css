@@ -13,5 +13,6 @@
  *= require_tree .
  *= require angular-material.min
  *= require angular-ui-select2
+ *= require select2
  *= require_self
  */

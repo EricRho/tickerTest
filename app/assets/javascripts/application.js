@@ -14,10 +14,10 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-animate
-//= require angular-resource
 //= require angular-aria
 //= require angular-material.min
 //= require select2
+//= require angular-resource
 //= require angular-ui-select2
 //= require main.js
 //= require_tree ./angular
